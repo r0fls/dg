@@ -1,4 +1,4 @@
-# Docker compose example that runs a Galera cluster
+# Docker compose configuration that runs a Galera cluster
 
 ## Usage
 
@@ -18,3 +18,7 @@ $ sudo docker exec -ti dg_node1_1 mysql -e 'show status like "wsrep_cluster_size
 | wsrep_cluster_size |     3 |
 +--------------------+-------+
 ```
+
+
+Note this needs to be further adapted to work with nodes on different hosts, which is discussed at www.galeracluster.com [here]
+(http://galeracluster.com/2015/05/getting-started-galera-with-docker-part-2-2/).
