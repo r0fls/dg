@@ -1,0 +1,23 @@
+version: '2'
+services:
+  node1:
+    build:
+      context: ./
+    entrypoint:
+      - mysqld
+      - --wsrep-cluster-name=local-test
+      - --wsrep-cluster-address=gcomm://
+  node2:
+    build:
+      context: ./
+    entrypoint:
+      - mysqld
+      - --wsrep-cluster-name=local-test
+      - --wsrep-cluster-address=gcomm://node1
+  node3:
+    build:
+      context: ./
+    entrypoint:
+      - mysqld
+      - --wsrep-cluster-name=local-test
+      - --wsrep-cluster-address=gcomm://node1
